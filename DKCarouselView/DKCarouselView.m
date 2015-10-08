@@ -321,6 +321,7 @@ typedef void(^DKCarouselViewTapBlock)();
                                     kScrollViewFrameHeight);
         }
     } else {
+        self.scrollView.contentSize = CGSizeMake(scrollView.contentSize.width,scrollView.frame.size.height);
         [self.carouselItemViews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
         CGFloat originX,
