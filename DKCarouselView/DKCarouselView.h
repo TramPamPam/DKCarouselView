@@ -65,4 +65,7 @@ typedef void(^DKCarouselViewDidChangeBlock)(DKCarouselView *view, NSInteger inde
 @property (nonatomic, assign) CGPoint indicatorOffset; // default offset is CGPointZero, the indicator is centered horizontally.
 @property (nonatomic, readonly) CGSize indicatorSize; // returns minimum size for given items.
 
+//vertical scroll
+-(void)setVerticalScroll:(BOOL)value;
+
 @end

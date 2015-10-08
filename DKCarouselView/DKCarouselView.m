@@ -219,7 +219,8 @@ typedef void(^DKCarouselViewTapBlock)();
     NSInteger index = 0;
     for (DKCarouselItem *item in _items) {
         DKClickableImageView *itemView = [DKClickableImageView new];
-        
+        [itemView setContentMode:UIViewContentModeScaleAspectFit];
+
         itemView.userInteractionEnabled = YES;
         if ([item isKindOfClass:[DKCarouselURLItem class]]) {
             NSString *imageUrl = [(DKCarouselURLItem *)item imageUrl];
@@ -290,6 +291,11 @@ typedef void(^DKCarouselViewTapBlock)();
 
 - (NSUInteger)numberOfItems {
     return self.items.count ? self.items.count : 0;
+}
+
+-(void)setVerticalScroll:(BOOL)value {
+    [self.scrollView setPagingEnabled:YES];
+    [self.scrollView setAlwaysBounceVertical:value];
 }
 
 #pragma mark - Private methods
